@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @inquiry.name
+%p
+  %b Content:
+  = @inquiry.content
+
+= link_to 'Edit', edit_inquiry_path(@inquiry)
+\|
+= link_to 'Back', inquiries_path
