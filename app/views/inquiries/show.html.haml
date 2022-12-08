@@ -1,12 +1,15 @@
-%p#notice= notice
+.row
+  .col-12
+    %p
+      %b 名前:
+      = @inquiry.name
+  .col-12
+    %p
+      %b 内容:
+      = @inquiry.content
 
-%p
-  %b Name:
-  = @inquiry.name
-%p
-  %b Content:
-  = @inquiry.content
-
-= link_to 'Edit', edit_inquiry_path(@inquiry)
-\|
-= link_to 'Back', inquiries_path
+.row
+  .col-1
+    = link_to '編集', edit_inquiry_path(@inquiry), class: 'btn btn-secondary btn-block'
+  .col-1
+    = link_to '一覧', inquiries_path, class: 'btn btn-secondary btn-block'

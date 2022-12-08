@@ -1,23 +1,22 @@
-%h1 Listing inquiries
+%h1 問い合わせ一覧
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Content
-      %th
-      %th
-      %th
-
-  %tbody
-    - @inquiries.each do |inquiry|
+.row
+  %table.table
+    %thead
       %tr
-        %td= inquiry.name
-        %td= inquiry.content
-        %td= link_to 'Show', inquiry
-        %td= link_to 'Edit', edit_inquiry_path(inquiry)
-        %td= link_to 'Destroy', inquiry, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %th 名前
+        %th 内容
+        %th
+        %th
+        %th
 
-%br
+    %tbody
+      - @inquiries.each do |inquiry|
+        %tr
+          %td= inquiry.name
+          %td= inquiry.content
+          %td= link_to '表示', inquiry_path(inquiry)
+          %td= link_to '編集', edit_inquiry_path(inquiry)
+          %td= link_to '削除', inquiry_path(inquiry), data: { turbo_method: :delete, turbo_confirm: '削除してよろしいですか？' }
 
-= link_to 'New Inquiry', new_inquiry_path
+  = link_to '問い合わせ作成ページ', new_inquiry_path

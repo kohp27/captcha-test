@@ -1,7 +1,11 @@
-%h1 Editing inquiry
+%h1 問い合わせ編集
 
-= render 'form'
+.row.mb-3
+  .col-12
+    = render 'form'
 
-= link_to 'Show', @inquiry
-\|
-= link_to 'Back', inquiries_path
+.row
+  .col-1
+    = link_to '表示', inquiry_path(@inquiry), class: 'btn btn-secondary btn-block'
+  .col-1
+    = link_to '一覧', inquiries_path, class: 'btn btn-secondary btn-block'
